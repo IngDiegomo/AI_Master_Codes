@@ -21,7 +21,7 @@ $$
 
 And any other element $C_(i,j)$ has a non repeated numeric value ranging from 1 to $(n*m)-1$ , asigned randomly.
 
-The elements of the matrix must be arranged in a whay that $C_{1,1} = 1$ , $C_{1,2} = 2$, …, $C_{1,m} = m$ and $C_{2,1} = m+1$ , $C_{2,2} = m+2$ , … , $C_{n,1}=(n-1)*m+1$ , $C_{n,m-1}=(n*m)-1$ and $C_{n,m}=0$.
+The elements of the matrix must be arranged in a whay that $C_{1,1} = 1$ , $C_{1,2} = 2$, …, $C_{1,m} = m$ and $C_{2,1} = m+1$ , $C_{2,2} = m+2$ , … , $C_{n,1} = (n-1)*m+1$ , $C_{n,m-1} = (n*m)-1$ and $C_{n,m} = 0$.
 
 For achieving this, the number 0 that is initially at position $C_{n,m}$ can be moved under the following guidelines:
 
