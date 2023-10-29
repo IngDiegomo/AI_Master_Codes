@@ -101,7 +101,7 @@ $$
 $$
 
 $$
-T(s) = [i,d](s) = \begin{cases}
+T(s) = \[i,d\]\(s\) = \begin{cases}
 c_i = c_i & c_i \ne 0 \\
 (c_i = c_{i+d} , c_{i+d} = 0) & c_i = 0 \\
 \end{cases}
