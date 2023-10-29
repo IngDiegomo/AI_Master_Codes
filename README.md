@@ -4,24 +4,23 @@ Representation of an N*M sliding puzzle as well as a number of implemented ways 
 ## Problem
 Given an n*m matrix of the following form:
 
-\begin{equation}
+$$
 \begin{bmatrix} 
 c_{1,1} & c_{1,2} & c_{1,3} & ... & c_{1,m} \\
 c_{2,1} & ... &....& ...& c_{2,m}\\
 ...& ...& ...& ...& ...\\
 c_{n,1} & c_{n,2} & c_{n,3} & ...& c_{n,m} 
 \end{bmatrix}
-\end{equation}
-
+$$
 Where:
 
 $$
 c_{n,m} =0
 $$
 
-And any other element C_(i,j) tienen valores numéricos no repetidos que van de 1 a (n*m)-1, asignados aleatoriamente.
+And any other element $C_(i,j)$ has a non repeated numeric value ranging from 1 to (n*m)-1, asigned randomly.
 
-Se quiere ordenar los elementos de la matriz de tal forma que C_(1,1) = 1, C_(1,2) = 2, …, C_(1,m) = m y C_(2,1) = m+1, C_(2,2) = m+2, … C_(n,1) = (n-1)*m + 1, C_(n,m-1) = (n*m)-1 y C_(n,m) = 0.
+The elements of the matrix must be arranged in a whay that $C_{1,1} = 1$ , $C_{1,2} = 2$, …, $C_{1,m} = m$ and $C_{2,1} = m+1$ , $C_{2,2} = m+2$ , … , $C_{n,1} = (n-1)*m + 1$ , $C_{n,m-1} = (n*m)-1$ and $C_{n,m} = 0$.
 
 Para esto, se puede mover el 0 que inicialmente se encuentra en la posición C_(n,m) de la siguiente manera:
 
