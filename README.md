@@ -12,28 +12,25 @@ c_{2,1} & ... &....& ...& c_{2,m}\\
 c_{n,1} & c_{n,2} & c_{n,3} & ...& c_{n,m} 
 \end{bmatrix}
 $$
+
 Where:
 
 $$
 c_{n,m} =0
 $$
 
-And any other element $C_(i,j)$ has a non repeated numeric value ranging from 1 to (n*m)-1, asigned randomly.
+And any other element $C_(i,j)$ has a non repeated numeric value ranging from 1 to $(n*m)-1$ , asigned randomly.
 
-The elements of the matrix must be arranged in a whay that $C_{1,1} = 1$ , $C_{1,2} = 2$, …, $C_{1,m} = m$ and $C_{2,1} = m+1$ , $C_{2,2} = m+2$ , … , $C_{n,1} = (n-1)*m + 1$ , $C_{n,m-1} = (n*m)-1$ and $C_{n,m} = 0$.
+The elements of the matrix must be arranged in a whay that $C_{1,1} = 1$ , $C_{1,2} = 2$, …, $C_{1,m} = m$ and $C_{2,1} = m+1$ , $C_{2,2} = m+2$ , … , $C_{n,1}=(n-1)*m+1$ , $C_{n,m-1}=(n*m)-1$ and $C_{n,m}=0$.
 
-Para esto, se puede mover el 0 que inicialmente se encuentra en la posición C_(n,m) de la siguiente manera:
+For achieving this, the number 0 that is initially at position $C_{n,m}$ can be moved under the following guidelines:
 
-- El 0 puede moverse una casilla hacia arriba, hacia abajo, hacia la derecha o hacia la izquierda, mientras no se salga de los límites de la matriz, la casilla actual del 0 pasará a estar ocupada por el elemento que originalmente estaba en la casilla hacia donde el 0 se movió.
-- No son válidos movimientos en diagonal.
-
-
-
+- The 0 can move one space upwards, downwards, to the right or to the left as long as it doesnt get out of the limits of the matrix. When moved, the actual position where the 0 is will now be equal to the valua of the position the 0 is moving to.
+- Diagonal movements are not valid.
 
 ## Representation
-Representación:
 
-Asignar un indice fijo a cada casilla, este indice no se mueve, representa una posición o coordenada en la matriz:
+A fixed index is assigned to each position, this index stays the same even if the values are moved, it represents the coordinates of the position as follows:
 
 $$
 \begin{bmatrix} 
