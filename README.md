@@ -46,15 +46,17 @@ c_{20} & c_{21}& c_{22} & c_{23} & c_{24}
 \end{bmatrix}
 $$
 
+
 $$
 \begin{bmatrix} 
 c_0 & c_1 & c_2 & ... & c_{m-1} \\\\
 c_{m} & c_{m+1} &....& ...& c_{2m-1}\\\\
 c_{2m}& c_{2m+1}& c_{2m+2} & ...& c_{3m-1}\\\\
 ... & ... & ... &... &... \\\\
-c_{(n-1)*m} & c_{(n-1)*m+1} & c_{(n-1)*m+2} & ...& c_{(n*m)-1} 
+c_{(n-1)\*m} & c_{(n-1)\*m+1} & c_{(n-1)\*m+2} & ...& c_{(n*m)-1} 
 \end{bmatrix}
 $$
+
 
 El indice representa la casilla. Es un indice fijo.
 
