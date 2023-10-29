@@ -4,22 +4,22 @@ Representation of an N*M sliding puzzle as well as a number of implemented ways 
 ## Problem
 Given an n*m matrix of the following form:
 
-$$
+\[
 \begin{bmatrix} 
 c_{1,1} & c_{1,2} & c_{1,3} & ... & c_{1,m} \\
 c_{2,1} & ... &....& ...& c_{2,m}\\
 ...& ...& ...& ...& ...\\
 c_{n,1} & c_{n,2} & c_{n,3} & ...& c_{n,m} 
 \end{bmatrix}
-$$
+\]
 
-Donde:
+Where:
 
 $$
 c_{n,m} =0
 $$
 
-Y los demás elementos C_(i,j) tienen valores numéricos no repetidos que van de 1 a (n*m)-1, asignados aleatoriamente.
+And any other element C_(i,j) tienen valores numéricos no repetidos que van de 1 a (n*m)-1, asignados aleatoriamente.
 
 Se quiere ordenar los elementos de la matriz de tal forma que C_(1,1) = 1, C_(1,2) = 2, …, C_(1,m) = m y C_(2,1) = m+1, C_(2,2) = m+2, … C_(n,1) = (n-1)*m + 1, C_(n,m-1) = (n*m)-1 y C_(n,m) = 0.
 
