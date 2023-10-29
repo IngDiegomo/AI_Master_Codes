@@ -58,8 +58,6 @@ c_{(n-1)\*m} & c_{(n-1)\*m+1} & c_{(n-1)\*m+2} & ...& c_{(n*m)-1}
 $$
 
 
-El indice representa la casilla. Es un indice fijo.
-
 $$
 X=s=\begin{bmatrix} 
 c_0 & c_1 & c_2 & c_3 & ... & c_{(n*m)-1}
