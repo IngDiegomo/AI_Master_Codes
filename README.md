@@ -4,14 +4,14 @@ Representation of an N*M sliding puzzle as well as a number of implemented ways 
 ## Problem
 Given an n*m matrix of the following form:
 
-\[
+\begin{equation}
 \begin{bmatrix} 
 c_{1,1} & c_{1,2} & c_{1,3} & ... & c_{1,m} \\
 c_{2,1} & ... &....& ...& c_{2,m}\\
 ...& ...& ...& ...& ...\\
 c_{n,1} & c_{n,2} & c_{n,3} & ...& c_{n,m} 
 \end{bmatrix}
-\]
+\end{equation}
 
 Where:
 
