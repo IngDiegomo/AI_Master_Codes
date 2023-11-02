@@ -8,13 +8,13 @@ class SlidingPuzzle():
         self.n = n
         self.m = m
         self.grid = list(range(1, n*m))
-        self.goal = list(range(1,n*m))
+        self.goal = list(range(1, n*m))
         random.shuffle(self.grid)
         self.grid.append(0)
-        self.goal
+        self.goal.append(0)
+        self.goal = [self.goal]
         self.transitions = [-self.m , self.m , -1 , 1]
-        
-    
+            
     def __str__(self) -> str:
         
         left_values = [x*self.m for x in range(0,self.m)]
@@ -59,7 +59,7 @@ def action(state:SlidingPuzzle , d):
                 
                 return new_state
         
-        print("Not valid action d = " + str(d))
+        #print("Not valid action d = " + str(d))
         return state
 
 def T(state : SlidingPuzzle) -> list:
