@@ -1,10 +1,10 @@
-def list_intersection(a:list , b:list):
+def list_intersection(a , b):
     intersection = []
-    for i in a:
-        if (i in b):
+    for i in list(a):
+        if (i in list(b)):
             intersection.append(i)
     return intersection
 
-def remove_duplicates(a:list):
-    unique_tuples = set(tuple(inner_list) for inner_list in a)
+def remove_duplicates(a):
+    unique_tuples = set(tuple(inner_list) for inner_list in list(a))
     return [list(unique_tuple) for unique_tuple in unique_tuples]

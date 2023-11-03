@@ -1,19 +1,21 @@
+from ..problem_interface import Problem
 import random
 import copy
 
-class SlidingPuzzle():
+class SlidingPuzzle(Problem):
 
-    def __init__(self , n , m):
+    def __init__(self , n: int, m:int):
         
         self.n = n
         self.m = m
-        self.grid = list(range(1, n*m))
-        self.goal = list(range(1, n*m))
-        random.shuffle(self.grid)
-        self.grid.append(0)
-        self.goal.append(0)
-        self.goal = [self.goal]
+        self.initial_state = list(range(1, n*m))
+        self.goal_state = list(range(1, n*m))
+        random.shuffle(self.initial_state)
+        self.initial_state.append(0)
+        self.current_state = copy.deepcopy(self.initial_state)
+        self.goal_state.append(0)
         self.transitions = [-self.m , self.m , -1 , 1]
+        self.zero_index = len(self.initial_state) - 1
             
     def __str__(self) -> str:
         
@@ -24,54 +26,79 @@ class SlidingPuzzle():
         
         for i in range (0,self.n*self.m):
             if i in left_values:
-                string_grid += "   " + str(self.grid[i])
+                string_grid += "   " + str(self.current_state[i])
             elif i in right_values:
-                string_grid += "    ,   " + str(self.grid[i]) + "   \n"
+                string_grid += "    ,   " + str(self.current_state[i]) + "   \n"
             else:
-                string_grid += "   ,   " + str(self.grid[i]) 
+                string_grid += "   ,   " + str(self.current_state[i]) 
         
         return string_grid
 
+    def transition(self, d:int, state):
+         
+        if not(0<= d <= len(self.transitions)-1):
+            pass
 
+        elif not(0<=(self.zero_index + self.transitions[d]) <= ((self.n*self.m)-1)):
+            pass
 
-def valid(state:SlidingPuzzle , i , d):
-        
-        if (0<=d<=3):
-            
-            i += state.transitions[d] 
-            
-            if (0<=i<=((state.n*state.m)-1)): return True
-                 
-        
-        return False
-    
+        else:
 
-def action(state:SlidingPuzzle , d):
-        
-        for i in range(0,state.n*state.m):
-
-            if ((state.grid[i] == 0) and (valid(state,i,d))):
-
-                new_state = copy.deepcopy(state)
-
-                new_state.grid[i] = state.grid[i + state.transitions[d]]
-                new_state.grid[i + state.transitions[d]] = 0
-                
-                return new_state
-        
-        #print("Not valid action d = " + str(d))
-        return state
-
-def T(state : SlidingPuzzle) -> list:
-    
-    options = []
-
-    for i in range(len(state.transitions)):
-
-        new_state = action(state,i)
-        if (new_state.grid != state.grid):
-            options.append(new_state)
+            future_state = copy.deepcopy(state)
+            future_state[state.index(0)] = state[state.index(0) + self.transitions[d]]
+            future_state[state.index(0) + self.transitions[d]] = 0
+            return future_state
              
-    return options
+        return state
+    
+    def get_random_future_state(self,state):
+        
+        while True:
 
+            random_movement = random.randint(0,len(self.transitions)- 1)
+            future_state = self.transition(random_movement,state)
+
+            if future_state != state:
+                return future_state
+
+    def get_all_future_states(self,state):
+        
+        future_states = [
+            self.transition(d,state)
+            for d in range(0,len(self.transitions))
+            if self.transition(d,state) != state
+        ]
+    
+        return  future_states
+    
+    @classmethod
+    def heuristic(cls, state):
+        
+        non_ordered_numbers = 0
+        goal_state = list(range(1, len(state)+1))
+        goal_state.append(0) 
+        
+        for i in range (0, len(state)):
+            if state[i] != goal_state[i]:
+                non_ordered_numbers += 1
+            
+        return non_ordered_numbers
+    
+    def validate_state(self):
+        return SlidingPuzzle.heuristic(self.current_state) == 0
+    
+    def get_initial_state(self) -> list:
+        return self.initial_state
+    
+    def get_current_state(self) -> list: 
+        return self.current_state
+    
+    def update_current_state(self, state):
+        self.zero_index = state.index(0)
+        self.current_state = state
+    
+    def get_goal_state(self) -> list:
+        return self.goal_state
+
+    
 

@@ -1,22 +1,29 @@
-from ast import FunctionType
-from types import MethodType
-from representation import SlidingPuzzle
-import helper_functions as hp
+from .. import helper_functions as hp
+from ...problems.problem_interface import Problem
 
-def generateX(s_0:SlidingPuzzle, G:SlidingPuzzle , T):
+class GenerateX:
 
-    X = Fr = newFr = [s_0]
+    def __init__(self, general_functions: Problem):
+        self.problem = general_functions
 
-    while (hp.list_intersection(Fr,G)==[]):
+    def find_solution(self):
+        
+        problem = self.problem
+        goal = [problem.get_goal_state()]
+        Fr = [problem.get_initial_state()]
+        newFr = [problem.get_initial_state()]
+        X = [problem.get_initial_state()]
+        
 
-        for state in Fr:
-            for next_state in T(state):
-                newFr.append(next_state)
+        while not (any ([state in Fr for state in goal])):
 
-        Fr.append(newFr)
-        Fr = hp.remove_duplicates(Fr)
-        X.append(Fr)
-        newFr = []
-   
-    return X
-    
+            for state in Fr:                 
+                for next_state in problem.get_all_future_states(state): 
+                    newFr.append(next_state)  
+            
+            Fr = Fr + newFr 
+            Fr = hp.remove_duplicates(Fr)
+            X = X + Fr 
+            newFr = []
+
+        return X
