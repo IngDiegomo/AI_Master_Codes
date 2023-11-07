@@ -1,5 +1,5 @@
 from .. import helper_functions as hp
-from ...problems.problem_interface import Problem
+from ....problems.problem_interface import Problem
 
 class GenerateX:
 
@@ -26,4 +26,4 @@ class GenerateX:
             X = X + Fr 
             newFr = []
 
-        return X
+        return X, 
