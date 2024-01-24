@@ -122,5 +122,14 @@ class SlidingPuzzle(Problem):
     def get_goal_state(self) -> list:
         return self.goal_state
 
-    
+    def is_solvable(self,state):
+        
+        count = 0
+
+        for i in range(0,(self.n*self.m)-1):
+            for j in range(i+1, (self.n*self.m)):
+                if state[j] and state[i] and state[i] > state[j]:
+                    count += 1
+        print(count)
+        return count % 2 == 0    
 

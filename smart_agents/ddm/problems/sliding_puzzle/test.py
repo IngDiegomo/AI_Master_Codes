@@ -1,17 +1,8 @@
-# Define your function with two arguments
-def func(x, y):
-    return x * y
+set1 = {1, 2, 3}
+set2 = {2, 3, 5}
+set3 = {2, 5, 6}
 
-#plan = [lambda y, x=10: func(x, y), lambda y, x='24': func(x, y), lambda y, x=25: func(x, y)]
+# Eliminate elements from set1 that are in both set2 and set3
+set1.difference_update(set2.intersection(set3))
 
-action = lambda x=20, y = 25: func(x,y)
-
-print(action)
-
-# Access the x argument of the first lambda function in the plan
-#x_value_first = plan[0].__defaults__[0]
-#print(x_value_first)  # This will print 1
-
-# Access the x argument of the second lambda function in the plan
-#x_value_second = plan[1].__defaults__[0]
-#print(x_value_second)  # This will print 3
+print(set1)  # Set1 will now contain elements {2, 3}

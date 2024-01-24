@@ -31,7 +31,7 @@ class Problem(ABC):
         pass
 
     @abstractmethod
-    def get_goal_state(self):
+    def get_goal_state(self) -> list:
         pass
     
     @abstractmethod

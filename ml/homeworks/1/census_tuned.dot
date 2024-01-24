@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="relationship <= 0.5\nlog_loss = 0.792\nsamples = 36631\nvalue = [27902, 8729]", fillcolor="#eda877"] ;
+1 [label="education-num <= 12.5\nlog_loss = 0.992\nsamples = 14730\nvalue = [8136, 6594]", fillcolor="#fae7d9"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="capital-gain <= 5095.5\nlog_loss = 0.917\nsamples = 10321\nvalue = [6892, 3429]", fillcolor="#f2c09c"] ;
+1 -> 2 ;
+3 [label="log_loss = 0.88\nsamples = 9816\nvalue = [6883, 2933]", fillcolor="#f0b78d"] ;
+2 -> 3 ;
+4 [label="log_loss = 0.129\nsamples = 505\nvalue = [9, 496]", fillcolor="#3d9fe5"] ;
+2 -> 4 ;
+5 [label="log_loss = 0.858\nsamples = 4409\nvalue = [1244, 3165]", fillcolor="#87c4ef"] ;
+1 -> 5 ;
+6 [label="capital-gain <= 7055.5\nlog_loss = 0.461\nsamples = 21901\nvalue = [19766, 2135]", fillcolor="#e88f4e"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label="relationship <= 4.5\nlog_loss = 0.397\nsamples = 21436\nvalue = [19753, 1683]", fillcolor="#e78c4a"] ;
+6 -> 7 ;
+8 [label="education-num <= 12.5\nlog_loss = 0.286\nsamples = 19844\nvalue = [18855, 989]", fillcolor="#e68843"] ;
+7 -> 8 ;
+9 [label="log_loss = 0.168\nsamples = 15900\nvalue = [15504, 396]", fillcolor="#e6843e"] ;
+8 -> 9 ;
+10 [label="log_loss = 0.611\nsamples = 3944\nvalue = [3351, 593]", fillcolor="#ea975c"] ;
+8 -> 10 ;
+11 [label="log_loss = 0.988\nsamples = 1592\nvalue = [898, 694]", fillcolor="#f9e2d2"] ;
+7 -> 11 ;
+12 [label="log_loss = 0.184\nsamples = 465\nvalue = [13, 452]", fillcolor="#3fa0e6"] ;
+6 -> 12 ;
+}
